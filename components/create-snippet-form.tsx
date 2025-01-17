@@ -124,7 +124,7 @@ export function CreateSnippetForm() {
               <FormControl>
                 <Input 
                   placeholder="Enter a title"
-                  className="font-mono min-h-[50px]"
+                  className="font-mono"
                   {...field}
                 />
               </FormControl>

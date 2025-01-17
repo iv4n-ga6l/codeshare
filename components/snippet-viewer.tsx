@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog'
 import { Button } from '@/components/ui/button'
@@ -11,16 +11,8 @@ import { Clipboard, Trash2, Edit2, Check, X } from 'lucide-react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { tomorrow } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import { formatDistanceToNow, isFuture } from 'date-fns'
+import { Snippet } from '@/types/snippet';
 
-
-interface Snippet {
-  id: string
-  title: string
-  content: string
-  language: string
-  created_at: string
-  expires_at: string | null
-}
 
 function getExpirationText(expires_at: string) {
   if (!expires_at) return null;

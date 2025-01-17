@@ -74,6 +74,11 @@ export async function GET(request: Request) {
 
     // get all the snippets
     const snippets = querySnapshot.docs.map(doc => doc.data())
+    // replace for each snippet of snippets the fields created_at and expires_at respectively snippet.created_at?.toDate().toISOString() || new Date().toISOString() and snippet.expires_at?.toDate().toISOString() || null
+    snippets.forEach(snippet => {
+      snippet.created_at = snippet.created_at?.toDate().toISOString() || new Date().toISOString()
+      snippet.expires_at = snippet.expires_at?.toDate().toISOString() || null
+    })
     return NextResponse.json(snippets)
   } catch (error) {
     console.error('Error retrieving snippets:', error)

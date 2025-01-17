@@ -50,7 +50,10 @@ export default async function SnippetPage({
     <div className="min-h-screen bg-background">
       <header className="border-b">
         <div className="container mx-auto px-4 py-4">
-          <Link href="/"><h1 className="text-2xl font-bold text-foreground">CodeShare</h1></Link>
+          <div className='flex items-center gap-2'>
+            <img src="https://i.ibb.co/J7ThL56/Screenshot-2025-01-17-044341-removebg-preview.png" alt="CodeShare Logo" className="h-8 w-8" />
+            <Link href="/"><h1 className="text-2xl font-bold text-foreground">CodeShare</h1></Link>
+          </div>
         </div>
       </header>
 
