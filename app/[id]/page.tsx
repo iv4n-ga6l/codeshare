@@ -23,7 +23,10 @@ async function getSnippet(id: string) {
     }
 
     const snippet = {
-      ...snippetDoc,
+      id: snippetDoc.id,
+      title: snippetDoc.title,
+      content: snippetDoc.content,
+      language: snippetDoc.language,
       created_at: snippetDoc.created_at?.toDate().toISOString() || new Date().toISOString(),
       expires_at: snippetDoc.expires_at?.toDate().toISOString() || null,
     }
