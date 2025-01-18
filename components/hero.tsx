@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 
@@ -8,8 +10,8 @@ export default function Hero() {
         <div className="md:w-1/2 mb-8 md:mb-0">
           <h1 className="text-5xl font-bold mb-4">Share Code Snippets with Ease</h1>
           <p className="text-xl mb-6">CodeShare makes it simple to share and collaborate on code snippets. Start sharing your code today!</p>
-          <Button size="lg" variant="secondary">
-            <a href="#create">Get Started</a>
+          <Button size="lg" variant="secondary" onClick={() => window.location.href = '/#create' }>
+            Get Started
           </Button>
         </div>
         <div className="md:w-1/2">
@@ -18,7 +20,7 @@ export default function Hero() {
             alt="Code sharing illustration" 
             width={600} 
             height={400}
-            className="rounded-lg shadow-lg"
+            className="rounded-lg shadow-lg skew-y-3"
           />
         </div>
       </div>
