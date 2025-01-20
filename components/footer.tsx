@@ -17,7 +17,7 @@ export default function Footer() {
           </nav>
         </div>
         <div className="mt-8 flex justify-center space-x-4">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+          <a href="https://github.com/iv4n-ga6l" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
             <Github className="h-6 w-6" />
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
