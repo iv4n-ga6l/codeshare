@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { nanoid } from 'nanoid'
 import { z } from 'zod'
 import { db } from '@/lib/firebase'
-import { collection, addDoc, serverTimestamp, query, getDocs } from 'firebase/firestore'
+import { collection, addDoc, serverTimestamp, query, where, getDocs } from 'firebase/firestore'
 
 // Add this export to explicitly mark the route as dynamic
 export const dynamic = 'force-dynamic'
@@ -62,7 +62,10 @@ export async function POST(request: Request) {
 export async function GET(request: Request) {
   try {
     const snippetsRef = collection(db, 'snippets')
-    const q = query(snippetsRef)
+    const q = query(
+      snippetsRef,
+      where('deleted', '==', false)
+    )
 
     const querySnapshot = await getDocs(q)
     if (querySnapshot.empty) {
