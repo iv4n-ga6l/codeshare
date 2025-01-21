@@ -110,7 +110,7 @@ export function SnippetViewer({ snippet } : { snippet: Snippet }) {
     try {
       const canvas = await html2canvas(snippetRef.current, {
         backgroundColor: null,
-        scale: 2,
+        scale: 2
       });
 
       const image = canvas.toDataURL(format === 'png' ? 'image/png' : 'image/jpeg');
